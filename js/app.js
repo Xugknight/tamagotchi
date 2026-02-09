@@ -35,18 +35,26 @@ function init() {
 
 function runGame() {
     updateStates();
-    console.log(state);
+    checkGameOver();
     render();
 };
 
 function render() { 
-    
+    boredomStatEl.textContent = state.boredom;
+    hungerStatEl.textContent = state.hunger;
+    sleepinessStatEl.textContent = state.sleepiness;
 };  
 
 function updateStates() {
     state.boredom += Math.floor(Math.random() * 4);
     state.hunger += Math.floor(Math.random() * 4);
     state.sleepiness += Math.floor(Math.random() * 4);
+};
+
+function checkGameOver() {
+    if (state.boredom >= 10 || state.hunger >= 10 || state.sleepiness >= 10) {
+        gameOver = true;
+    }
 };
     
 
