@@ -1,9 +1,4 @@
 /*-------------------------------- Constants --------------------------------*/
-const TICK_MS = 5 * 60 * 1000;     // 5 minutes per tick
-const MAX_STAT = 100;             // lose at 100+
-const WARNING_STAT = 70;          // warning zone
-const ACTION_DELTA = 15;          // buttons reduce by 15 (not reset)
-const MAX_CATCHUP_TICKS = 12;     // cap catch-up (e.g., max 1 hour worth if tab was asleep)
 
 /*---------------------------- Variables (state) ----------------------------*/
 let state; // tracks boredom, hunger, sleepiness
@@ -69,28 +64,18 @@ function updateStates() {
 };
 
 function checkGameOver() {
-    if (state.boredom >= 10 || state.hunger >= 10 || state.sleepiness >= 10) {
+    if (state.boredom >= 15 || state.hunger >= 15 || state.sleepiness >= 15) {
         gameOver = true;
     };
 };
 
-function playBtnClick() {
-    state.boredom = 0;
-    render();
-};
-
-function feedBtnClick() {
-    state.hunger = 0;
-    render();
-};
-
-function sleepBtnClick() {
-    state.sleepiness = 0;
+function handleStatReset(stat) {
+    state[stat] = 0;
     render();
 };
 
 /*----------------------------- Event Listeners -----------------------------*/
-playBtnEl.addEventListener('click', playBtnClick);
-feedBtnEl.addEventListener('click', feedBtnClick);
-sleepBtnEl.addEventListener('click', sleepBtnClick);
+playBtnEl.addEventListener('click', () => handleStatReset('boredom'));
+feedBtnEl.addEventListener('click', () => handleStatReset('hunger'));
+sleepBtnEl.addEventListener('click', () => handleStatReset('sleepiness'));
 resetBtnEl.addEventListener('click', init);

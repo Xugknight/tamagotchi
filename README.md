@@ -1,61 +1,34 @@
 # Tamagotchi Browser Game 🐣
 
-A browser-based Tamagotchi-style virtual pet game built with vanilla JavaScript, HTML, and CSS.
+A simple Tamagotchi-style virtual pet built with vanilla JavaScript, HTML, and CSS.
 
-The goal is to keep your creature alive by managing its boredom, hunger, and sleepiness over time. Stats increase automatically, and the player must interact with the pet to prevent it from reaching critical levels.
+The player keeps the creature alive by managing three stats: boredom, hunger, and sleepiness. Each stat increases on a timed interval, and user interaction is required to prevent any stat from reaching the maximum threshold.
 
-This project explores game loops, state-driven UI updates, and incremental polish in a simple, framework-free environment.
-
----
-
-## 🎮 Gameplay Overview
-
-- Each pet has three stats:
-  - **Boredom**
-  - **Hunger**
-  - **Sleepiness**
-- Stats increase automatically over time.
-- Buttons allow the player to reduce individual stats.
-- If any stat reaches the maximum threshold, the game ends.
-- Players can restart and try again with a new creature.
-
-Planned enhancements focus on making the experience feel closer to a real Tamagotchi toy rather than a short, high-pressure game.
+This project focuses on implementing a clean game loop, centralized state management, and dynamic DOM updates.
 
 ---
 
-## ✨ Features
+## Gameplay
 
-### Current
-- Centralized game state object
-- Interval-based game loop
-- Dynamic DOM rendering
-- Game over detection and reset
-- Interactive stat controls
-
-### In Progress / Planned
-- Slower, real-time stat progression (playable throughout the day)
-- Higher stat caps and warning zones
-- Buttons reduce stats instead of hard resets
-- Randomized creatures with light trait differences
-- Visual mood changes based on pet status
-- Improved UI styling and animations
+- Three stats: **Boredom**, **Hunger**, **Sleepiness**
+- Stats increase automatically over time
+- Buttons reset individual stats
+- The game ends if any stat reaches the limit
+- Restart fully resets the game state
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-- **JavaScript (Vanilla)**
-- **HTML**
-- **CSS**
-
-No frameworks or libraries — the focus is on clarity, maintainability, and core web fundamentals.
+- JavaScript (Vanilla)
+- HTML
+- CSS
 
 ---
 
-## 🧠 What This Project Demonstrates
+## What This Demonstrates
 
-- Game loop and timer management
-- State-driven UI architecture
-- Separation of concerns (state, render, event handling)
-- Clean, readable, and extensible JavaScript
-- Iterative design and polish
+- Interval-based game loop (`setInterval`)
+- State-driven rendering
+- Clear separation between state, rendering, and event handling
+- Proper timer cleanup and reset logic
