@@ -1,5 +1,7 @@
 # Tamagotchi Browser Game 🐣
 
+**Live Demo:** https://xugknight.github.io/tamagotchi/
+
 A simple Tamagotchi-style virtual pet built with vanilla JavaScript, HTML, and CSS.
 
 The player keeps the creature alive by managing three stats: boredom, hunger, and sleepiness. Each stat increases on a timed interval, and user interaction is required to prevent any stat from reaching the maximum threshold.
